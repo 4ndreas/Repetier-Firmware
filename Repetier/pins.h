@@ -1198,7 +1198,7 @@ STEPPER_CURRENT_CONTROL
  #error Oops!  Make sure you have 'Arduino Mega' selected from the 'Tools -> Boards' menu.
  #endif
  
- 
+ /*
  #define X_STEP_PIN         26
  #define X_DIR_PIN          27
  #define X_ENABLE_PIN       25
@@ -1228,6 +1228,35 @@ STEPPER_CURRENT_CONTROL
  #define E2_STEP_PIN         23
  #define E2_DIR_PIN          24
  #define E2_ENABLE_PIN       22
+ */
+ 
+ #define X_STEP_PIN         23
+ #define X_DIR_PIN          24
+ #define X_ENABLE_PIN       22
+ 
+ #define X_MIN_PIN          37
+ #define X_MAX_PIN          40   //2 //Max endstops default to disabled "-1", set to commented value to enable.
+ 
+ #define Y_STEP_PIN         4 // A6
+ #define Y_DIR_PIN          54 // A0
+ #define Y_ENABLE_PIN       5
+ #define Y_MIN_PIN          41
+ #define Y_MAX_PIN          38   //15
+ 
+ #define Z_STEP_PIN         56 // A2
+ #define Z_DIR_PIN          60 // A6
+ #define Z_ENABLE_PIN       55 // A1
+ #define Z_MIN_PIN          18
+ #define Z_MAX_PIN          19
+ 
+ #define E0_STEP_PIN         35
+ #define E0_DIR_PIN          36
+ #define E0_ENABLE_PIN       34
+ 
+ #define E1_STEP_PIN         29
+ #define E1_DIR_PIN          39
+ #define E1_ENABLE_PIN       28
+ 
  
  #define SDCARDDETECT -1		// Ramps does not use this port
  #define SDPOWER            -1
@@ -1242,17 +1271,19 @@ STEPPER_CURRENT_CONTROL
  #define KILL_PIN           -1
  
  #define HEATER_0_PIN       9    // EXTRUDER 1
- #define HEATER_1_PIN       8    // Heated bed 
- #define HEATER_2_PIN       10   // EXTRUDER 2  
+ #define HEATER_1_PIN       8    // EXTRUDER 2 
+ #define HEATER_2_PIN       44   // Heated bed  
+
  
  #define TEMP_0_PIN         13   // Thermistor 0 ANALOG NUMBERING   
  #define TEMP_1_PIN         15   // Thermistor 1 ANALOG NUMBERING   
  #define TEMP_2_PIN         14   // Thermistor 2 for heated bed ANALOG NUMBERING
- #define TEMP_3_PIN         8    // Thermocouple 0
- #define TEMP_4_PIN         4    // Thermocouple 1
+ #define TEMP_3_PIN         4    // Thermocouple 0
+ #define TEMP_4_PIN         8    // Thermocouple 1
   
  #define BEEPER_PIN 64			// Beeper on AUX-4
  
+ // LCD Header
  #define LCD_PINS_RS 14 
  #define LCD_PINS_ENABLE 15
  #define LCD_PINS_D4 30
@@ -1263,13 +1294,32 @@ STEPPER_CURRENT_CONTROL
  
  //buttons are directly attached using AUX-2
  #define BTN_EN1 59
- #define BTN_EN2 64
+ #define BTN_EN2 61
  #define BTN_ENC 43  //the click
+ 
+ // Shift Register Buttons
+ #define BTN_CLK 63
+ #define BTN_LD 42
+ #define BTN_DATA 17 
+ 
+ #define BTN_AUX1 66
+ #define BTN_AUX2 65
  
  #define BLEN_C 2
  #define BLEN_B 1
  #define BLEN_A 0
 
+// AUX3 Header
+#define PIN_AUX3_3 49
+#define PIN_AUX3_4 48
+#define PIN_AUX3_5 47
+#define PIN_AUX3_6 46
+
+// AUX4 Header
+#define PIN_AUX4_2 45
+#define PIN_AUX4_3 44
+
+// SPI 
 #define SCK_PIN          52
 #define MISO_PIN         50
 #define MOSI_PIN         51

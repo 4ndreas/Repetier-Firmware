@@ -39,6 +39,10 @@ Implemented Codes
 - G0  -> G1
 - G1  - Coordinated Movement X Y Z E
 - G4  - Dwell S<seconds> or P<milliseconds>
+
+- G10 - Lift nozzle.
+- G11 - Reverse nozzle lift.
+
 - G20 - Units for G0/G1 are inches.
 - G21 - Units for G0/G1 are mm.
 - G28 - Home all axis or named axis.
@@ -562,6 +566,12 @@ SET_OUTPUT(ANALYZER_CH7);
   TCCR1B =  (_BV(WGM12) | _BV(CS10)); // no prescaler == 0.0625 usec tick | 001 = clk/1
   OCR1A=65500; //start off with a slow frequency.
   TIMSK1 |= (1<<OCIE1A); // Enable interrupt
+  
+  
+  SET_OUTPUT(PIN_AUX3_3);
+  SET_OUTPUT(PIN_AUX3_4);
+  SET_OUTPUT(PIN_AUX3_5);
+  SET_OUTPUT(PIN_AUX3_6);
 }
 
 void defaultLoopActions() {

@@ -63,7 +63,7 @@ works, use the ascii charset 0 as fallback. Not the nicest for everything but wo
 2 = Alternative charset with more european chars
 
 */
-#define UI_DISPLAY_CHARSET 2
+#define UI_DISPLAY_CHARSET 1
 
 /** Select type of beeper
 0 = none
@@ -94,7 +94,7 @@ What display type do you use?
     IMPORTANT: You need to uncomment the LiquidCrystal include in Repetier.pde for it to work.
                If you have Sanguino and want to use the library, you need to have Arduino 023 or older. (13.04.2012)
 */
-#define UI_DISPLAY_TYPE 0
+#define UI_DISPLAY_TYPE 1
 
 /** Number of columns per row
 
@@ -155,6 +155,7 @@ Define the pin
 #define UI_DISPLAY_D7_PIN _BV(9)*/
 
 #else // Direct display connections
+/*
 #define UI_DISPLAY_RS_PIN		63		// PINK.1, 88, D_RS
 #define UI_DISPLAY_RW_PIN		-1
 #define UI_DISPLAY_ENABLE_PIN	        65		// PINK.3, 86, D_E
@@ -166,9 +167,23 @@ Define the pin
 #define UI_DISPLAY_D5_PIN		64		// PINK.2, 87, D_D5
 #define UI_DISPLAY_D6_PIN		44		// PINL.5, 40, D_D6
 #define UI_DISPLAY_D7_PIN		66		// PINK.4, 85, D_D7
+*/
+
+#define UI_DISPLAY_RS_PIN		14		// PINK.1, 88, D_RS
+#define UI_DISPLAY_RW_PIN		-1
+#define UI_DISPLAY_ENABLE_PIN	        15		// PINK.3, 86, D_E
+#define UI_DISPLAY_D0_PIN		30		// PINF.5, 92, D_D4
+#define UI_DISPLAY_D1_PIN		31		// PINK.2, 87, D_D5
+#define UI_DISPLAY_D2_PIN		32		// PINL.5, 40, D_D6
+#define UI_DISPLAY_D3_PIN		33		// PINK.4, 85, D_D7
+#define UI_DISPLAY_D4_PIN		30		// PINF.5, 92, D_D4
+#define UI_DISPLAY_D5_PIN		31		// PINK.2, 87, D_D5
+#define UI_DISPLAY_D6_PIN		32		// PINL.5, 40, D_D6
+#define UI_DISPLAY_D7_PIN		33		// PINK.4, 85, D_D7
 #define UI_DELAYPERCHAR		   320
 
 #endif
+
 
 
 /** \brief Are some keys connected?
@@ -176,7 +191,7 @@ Define the pin
 0 = No keys attached - disables also menu
 1 = Some keys attached
 */
-#define UI_HAS_KEYS 0
+#define UI_HAS_KEYS 1
 
 
 /** \brief Is a back key present.
@@ -301,31 +316,38 @@ const int matrixActions[] PROGMEM = UI_MATRIX_ACTIONS;
 
 void ui_init_keys() {
 #if UI_HAS_KEYS!=0
-  //UI_KEYS_INIT_CLICKENCODER_LOW(33,31); // click encoder on pins 47 and 45. Phase is connected with gnd for signals.
-  UI_KEYS_INIT_BUTTON_LOW(4); // push button, connects gnd to pin
-  UI_KEYS_INIT_BUTTON_LOW(5);
-  UI_KEYS_INIT_BUTTON_LOW(6);
-  UI_KEYS_INIT_BUTTON_LOW(11);
-  UI_KEYS_INIT_BUTTON_LOW(42);
 
-//  UI_KEYS_INIT_CLICKENCODER_LOW(47,45); // click encoder on pins 47 and 45. Phase is connected with gnd for signals.
-//  UI_KEYS_INIT_BUTTON_LOW(43); // push button, connects gnd to pin
-//  UI_KEYS_INIT_MATRIX(32,47,45,43,41,39,37,35);
+	UI_KEYS_INIT_OUT(BTN_CLK);
+	UI_KEYS_INIT_OUT(BTN_LD);
+	UI_KEYS_INIT_BUTTON_HIGH(BTN_DATA);
+
+	UI_KEYS_INIT_BUTTON_LOW(BTN_ENC); // enc klick
+
+	UI_KEYS_INIT_CLICKENCODER_LOW(BTN_EN1,BTN_EN2); // click encoder on pins D59 and A7. Phase is connected with gnd for signals.
+	
 #endif
 }
 void ui_check_keys(int &action) {
 #if UI_HAS_KEYS!=0
+	
+	UI_KEYS_SR_LOAD;	// Loads data from the buttons into the 74HC165
 
- //UI_KEYS_CLICKENCODER_LOW_REV(33,31); // click encoder on pins 47 and 45. Phase is connected with gnd for signals.
- UI_KEYS_BUTTON_LOW(4,UI_ACTION_OK); // push button, connects gnd to pin
- UI_KEYS_BUTTON_LOW(5,UI_ACTION_NEXT); // push button, connects gnd to pin
- UI_KEYS_BUTTON_LOW(6,UI_ACTION_PREVIOUS); // push button, connects gnd to pin
- UI_KEYS_BUTTON_LOW(11,UI_ACTION_BACK); // push button, connects gnd to pin
- UI_KEYS_BUTTON_LOW(42,UI_ACTION_SD_PRINT ); // push button, connects gnd to pin
-//  UI_KEYS_CLICKENCODER_LOW_REV(47,45); // click encoder on pins 47 and 45. Phase is connected with gnd for signals.
-//  UI_KEYS_BUTTON_LOW(43,UI_ACTION_OK); // push button, connects gnd to pin
+	UI_KEYS_SR_BUTTON(BTN_DATA,UI_ACTION_SHOW_USERMENU3);	// U3
+	UI_KEYS_SR_BUTTON(BTN_DATA,UI_ACTION_EXTRUDER_TEMP);	// U2
+	UI_KEYS_SR_BUTTON(BTN_DATA,UI_ACTION_SD_PRINT);			// U1
+	UI_KEYS_SR_BUTTON(BTN_DATA,UI_ACTION_PREVIOUS);			// up
+	UI_KEYS_SR_BUTTON(BTN_DATA,UI_ACTION_MENU_UP);			// right
+	UI_KEYS_SR_BUTTON(BTN_DATA,UI_ACTION_OK);				// sel
+	UI_KEYS_SR_BUTTON(BTN_DATA,UI_ACTION_NEXT);				// down
+	UI_KEYS_SR_BUTTON(BTN_DATA,UI_ACTION_BACK);				// left
+	
+	// Click Encoder
+	UI_KEYS_CLICKENCODER_LOW_REV(BTN_EN1,BTN_EN2); // click encoder on pins 47 and 45. Phase is connected with gnd for signals.
+	UI_KEYS_BUTTON_LOW(BTN_ENC,UI_ACTION_OK); // push button, connects gnd to pin
+	
 #endif
 }
+
 inline void ui_check_slow_encoder() {
 #if defined(UI_HAS_I2C_KEYS) && UI_HAS_KEYS!=0
 #if UI_DISPLAY_I2C_CHIPTYPE==0
@@ -361,7 +383,7 @@ void ui_check_slow_keys(int &action) {
 #endif
     i2c_stop();
     // Add I2C key tests here
-    UI_KEYS_I2C_CLICKENCODER_LOW_REV(_BV(2),_BV(0)); // click encoder on pins 0 and 2. Phase is connected with gnd for signals.
+	UI_KEYS_I2C_CLICKENCODER_LOW_REV(_BV(2),_BV(0)); // click encoder on pins 0 and 2. Phase is connected with gnd for signals.
     UI_KEYS_I2C_BUTTON_LOW(_BV(1),UI_ACTION_OK); // push button, connects gnd to pin  
     UI_KEYS_I2C_BUTTON_LOW(_BV(3),UI_ACTION_BACK); // push button, connects gnd to pin  
     UI_KEYS_I2C_BUTTON_LOW(_BV(4),UI_ACTION_MENU_QUICKSETTINGS+UI_ACTION_TOPMENU); // push button, connects gnd to pin  

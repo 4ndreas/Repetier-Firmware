@@ -301,6 +301,14 @@ extern unsigned char i2c_read(unsigned char ack);
 #define UI_KEYS_CLICKENCODER_LOW(pinA,pinB)  uid.encoderLast = (uid.encoderLast << 2) & 0x0F;if (!READ(pinA)) uid.encoderLast |=2;if (!READ(pinB)) uid.encoderLast |=1; uid.encoderPos += pgm_read_byte(&encoder_table[uid.encoderLast]);
 #define UI_KEYS_CLICKENCODER_LOW_REV(pinA,pinB)  uid.encoderLast = (uid.encoderLast << 2) & 0x0F;if (!READ(pinA)) uid.encoderLast |=2;if (!READ(pinB)) uid.encoderLast |=1; uid.encoderPos -= pgm_read_byte(&encoder_table[uid.encoderLast]);
 #define UI_KEYS_BUTTON_LOW(pin,action_) if(READ(pin)==0) action=action_;
+
+// 74HC165 Keypad
+#define UI_KEYS_INIT_OUT(pin) SET_OUTPUT(pin);WRITE(pin,LOW);
+#define PULSE_WIDTH_USEC   5
+#define UI_KEYS_SR_LOAD digitalWrite(BTN_CLK, HIGH); digitalWrite(BTN_LD, LOW); delayMicroseconds(PULSE_WIDTH_USEC); digitalWrite(BTN_LD, HIGH); digitalWrite(BTN_CLK, LOW);
+#define UI_KEYS_SR_BUTTON(pin,action_) if(READ(pin)==0) action=action_; UI_KEYS_SR_NEXT
+#define UI_KEYS_SR_NEXT digitalWrite(BTN_CLK, HIGH); delayMicroseconds(PULSE_WIDTH_USEC); digitalWrite(BTN_CLK, LOW);
+
 #define UI_KEYS_CLICKENCODER_HIGH(pinA,pinB)  uid.encoderLast = (uid.encoderLast << 2) & 0x0F;if (READ(pinA)) uid.encoderLast |=2;if (READ(pinB)) uid.encoderLast |=1; uid.encoderPos += pgm_read_byte(&encoder_table[uid.encoderLast]);
 #define UI_KEYS_CLICKENCODER_HIGH_REV(pinA,pinB)  uid.encoderLast = (uid.encoderLast << 2) & 0x0F;if (READ(pinA)) uid.encoderLast |=2;if (READ(pinB)) uid.encoderLast |=1; uid.encoderPos -= pgm_read_byte(&encoder_table[uid.encoderLast]);
 #define UI_KEYS_BUTTON_HIGH(pin,action_) if(READ(pin)!=0) action=action_;

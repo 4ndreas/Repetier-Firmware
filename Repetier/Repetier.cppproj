@@ -1,0 +1,534 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.1</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8.CPP</ToolchainName>
+    <ProjectGuid>{07b459b4-8d76-4638-bc6d-a459ba2d616b}</ProjectGuid>
+    <avrdevice>atmega2560</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>CPP</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>Repetier</AssemblyName>
+    <Name>Repetier</Name>
+    <RootNamespace>Repetier</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <OverrideVtorValue>
+    </OverrideVtorValue>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <CacheFlash>true</CacheFlash>
+    <UncachedRange />
+    <BootSegment>0</BootSegment>
+    <AsfFrameworkConfig>
+      <framework-data>
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.3.0" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+        <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>__AVR_ATmega2560__</Value>
+            <Value>ARDUINO=104</Value>
+            <Value>F_CPU=16000000L</Value>
+            <Value>__AVR__</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\hardware\arduino\cores\arduino</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\hardware\arduino\variants\mega</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\A5020</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\A5020\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\AFMotor</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\AFMotor\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\EEPROM</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\EEPROM\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Esplora</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Esplora\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\EtherCard</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\EtherCard\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Ethernet</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Ethernet\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\FastSPI_LED2</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\FastSPI_LED2\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Firmata</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Firmata\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\GSM</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\GSM\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\IRremote</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\IRremote\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\JeeLib</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\JeeLib\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LEDSoftPWM</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LEDSoftPWM\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LiquidCrystal</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LiquidCrystal\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LiquidCrystal_I2C</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LiquidCrystal_I2C\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\MAX6675</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\MAX6675\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SD</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SD\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Servo</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Servo\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SoftwareSerial</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SoftwareSerial\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SPI</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SPI\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Stepper</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Stepper\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\TextFinder</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\TextFinder\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\tinyFAT</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\tinyFAT\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\WiFi</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\WiFi\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Wire</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Wire\utility</Value>
+            <Value>c:\users\4ndreas\arduino-1.0.4\hardware\tools\avr\avr\include\</Value>
+            <Value>c:\users\4ndreas\arduino-1.0.4\hardware\tools\avr\avr\include\avr\</Value>
+            <Value>c:\users\4ndreas\arduino-1.0.4\hardware\tools\avr\avr\</Value>
+            <Value>c:\users\4ndreas\arduino-1.0.4\hardware\tools\avr\lib\gcc\avr\4.3.2\include\</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -include=arduino.h</avrgcc.compiler.miscellaneous.OtherFlags>
+        <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcccpp.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>__AVR_ATmega2560__</Value>
+            <Value>ARDUINO=104</Value>
+            <Value>F_CPU=16000000L</Value>
+            <Value>__AVR__</Value>
+          </ListValues>
+        </avrgcccpp.compiler.symbols.DefSymbols>
+        <avrgcccpp.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\hardware\arduino\cores\arduino</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\hardware\arduino\variants\mega</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\A5020</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\A5020\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\AFMotor</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\AFMotor\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\EEPROM</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\EEPROM\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Esplora</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Esplora\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\EtherCard</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\EtherCard\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Ethernet</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Ethernet\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\FastSPI_LED2</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\FastSPI_LED2\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Firmata</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Firmata\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\GSM</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\GSM\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\IRremote</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\IRremote\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\JeeLib</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\JeeLib\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LEDSoftPWM</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LEDSoftPWM\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LiquidCrystal</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LiquidCrystal\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LiquidCrystal_I2C</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LiquidCrystal_I2C\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\MAX6675</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\MAX6675\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SD</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SD\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Servo</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Servo\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SoftwareSerial</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SoftwareSerial\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SPI</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SPI\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Stepper</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Stepper\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\TextFinder</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\TextFinder\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\tinyFAT</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\tinyFAT\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\WiFi</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\WiFi\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Wire</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Wire\utility</Value>
+            <Value>c:\users\4ndreas\arduino-1.0.4\hardware\tools\avr\avr\include\</Value>
+            <Value>c:\users\4ndreas\arduino-1.0.4\hardware\tools\avr\avr\include\avr\</Value>
+            <Value>c:\users\4ndreas\arduino-1.0.4\hardware\tools\avr\avr\</Value>
+            <Value>c:\users\4ndreas\arduino-1.0.4\hardware\tools\avr\lib\gcc\avr\4.3.2\include\</Value>
+            <Value>
+            </Value>
+          </ListValues>
+        </avrgcccpp.compiler.directories.IncludePaths>
+        <avrgcccpp.compiler.optimization.level>Optimize (-O1)</avrgcccpp.compiler.optimization.level>
+        <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+        <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+        <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+        <avrgcccpp.compiler.miscellaneous.OtherFlags>-include=arduino.h</avrgcccpp.compiler.miscellaneous.OtherFlags>
+        <avrgcccpp.linker.memorysettings.Comment>&lt;segmentname&gt;=&lt;address&gt;, for example  .boot=0xff</avrgcccpp.linker.memorysettings.Comment>
+        <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+      </AvrGccCpp>
+    </ToolchainSettings>
+    <VisualMicroSettings>
+      <VisualMicroSettings>
+        <arduino.board.name>mega2560</arduino.board.name>
+        <arduino.board.desc>Arduino Mega 2560 or Mega ADK</arduino.board.desc>
+        <arduino.board.property_bag>name=Arduino Mega 2560 or Mega ADK
+upload.protocol=wiring
+upload.maximum_size=258048
+upload.speed=115200
+bootloader.low_fuses=0xFF
+bootloader.high_fuses=0xD8
+bootloader.extended_fuses=0xFD
+bootloader.path=stk500v2
+bootloader.file=stk500boot_v2_mega2560.hex
+bootloader.unlock_bits=0x3F
+bootloader.lock_bits=0x0F
+build.mcu=atmega2560
+build.f_cpu=16000000L
+build.core=arduino
+build.variant=mega
+runtime.ide.path=C:\Users\4ndreas\arduino-1.0.4
+build.system.path=C:\Users\4ndreas\arduino-1.0.4\hardware\arduino\system
+software=ARDUINO
+runtime.ide.version=104
+vm.core.include=arduino.h
+vm.boardsource.path=C:\Users\4ndreas\arduino-1.0.4\hardware\arduino
+vm.boardsource.name=boards.txt
+vm.platformname.name=
+compiler.path=C:\Users\4ndreas\arduino-1.0.4\hardware\tools\avr\bin\
+includes= -I"C:\Users\4ndreas\arduino-1.0.4\hardware\arduino\cores\arduino"  -I"C:\Users\4ndreas\arduino-1.0.4\hardware\arduino\variants\mega"  -I"C:\Users\4ndreas\arduino-1.0.4\libraries\SPI" 
+build.path=C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560
+build.project_name=Repetier
+build.variant.path=C:\Users\4ndreas\arduino-1.0.4\hardware\arduino\variants\mega
+archive_file=core.a
+object_file="C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560\SPI\SPI.cpp.o"
+source_file="C:\Users\4ndreas\arduino-1.0.4\libraries\SPI\SPI.cpp"
+object_files="C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560\Commands.cpp.o" "C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560\Eeprom.cpp.o" "C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560\Extruder.cpp.o" "C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560\gcode.cpp.o" "C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560\motion.cpp.o" "C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560\Repetier.cpp.o" "C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560\SDCard.cpp.o" "C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560\SdFat.cpp.o" "C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560\ui.cpp.o" "C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560\SPI\SPI.cpp.o" 
+</arduino.board.property_bag>
+        <arduino.build.mcu>atmega2560</arduino.build.mcu>
+        <arduino.build.f_cpu>16000000L</arduino.build.f_cpu>
+        <arduino.build.core>arduino</arduino.build.core>
+        <arduino.upload.protocol>wiring</arduino.upload.protocol>
+        <arduino.upload.speed>115200</arduino.upload.speed>
+        <arduino.upload.maximum_size>258048</arduino.upload.maximum_size>
+        <arduino.upload.port>COM4</arduino.upload.port>
+      </VisualMicroSettings>
+    </VisualMicroSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+        <avrgcc.common.optimization.RelaxBranches>True</avrgcc.common.optimization.RelaxBranches>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>__AVR_ATmega2560__</Value>
+            <Value>ARDUINO=104</Value>
+            <Value>F_CPU=16000000L</Value>
+            <Value>__AVR__</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\hardware\arduino\cores\arduino</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\hardware\arduino\variants\mega</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\A5020</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\A5020\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\AFMotor</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\AFMotor\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\EEPROM</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\EEPROM\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Esplora</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Esplora\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\EtherCard</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\EtherCard\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Ethernet</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Ethernet\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\FastSPI_LED2</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\FastSPI_LED2\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Firmata</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Firmata\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\GSM</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\GSM\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\IRremote</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\IRremote\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\JeeLib</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\JeeLib\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LEDSoftPWM</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LEDSoftPWM\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LiquidCrystal</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LiquidCrystal\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LiquidCrystal_I2C</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LiquidCrystal_I2C\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\MAX6675</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\MAX6675\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SD</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SD\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Servo</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Servo\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SoftwareSerial</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SoftwareSerial\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SPI</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SPI\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Stepper</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Stepper\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\TextFinder</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\TextFinder\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\tinyFAT</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\tinyFAT\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\WiFi</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\WiFi\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Wire</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Wire\utility</Value>
+            <Value>c:\users\4ndreas\arduino-1.0.4\hardware\tools\avr\avr\include\</Value>
+            <Value>c:\users\4ndreas\arduino-1.0.4\hardware\tools\avr\avr\include\avr\</Value>
+            <Value>c:\users\4ndreas\arduino-1.0.4\hardware\tools\avr\avr\</Value>
+            <Value>c:\users\4ndreas\arduino-1.0.4\hardware\tools\avr\lib\gcc\avr\4.3.2\include\</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -include=arduino.h</avrgcc.compiler.miscellaneous.OtherFlags>
+        <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcccpp.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>__AVR_ATmega2560__</Value>
+            <Value>ARDUINO=104</Value>
+            <Value>F_CPU=16000000L</Value>
+            <Value>__AVR__</Value>
+          </ListValues>
+        </avrgcccpp.compiler.symbols.DefSymbols>
+        <avrgcccpp.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\hardware\arduino\cores\arduino</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\hardware\arduino\variants\mega</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\A5020</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\A5020\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\AFMotor</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\AFMotor\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\EEPROM</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\EEPROM\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Esplora</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Esplora\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\EtherCard</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\EtherCard\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Ethernet</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Ethernet\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\FastSPI_LED2</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\FastSPI_LED2\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Firmata</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Firmata\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\GSM</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\GSM\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\IRremote</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\IRremote\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\JeeLib</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\JeeLib\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LEDSoftPWM</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LEDSoftPWM\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LiquidCrystal</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LiquidCrystal\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LiquidCrystal_I2C</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\LiquidCrystal_I2C\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\MAX6675</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\MAX6675\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SD</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SD\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Servo</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Servo\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SoftwareSerial</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SoftwareSerial\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SPI</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\SPI\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Stepper</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Stepper\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\TextFinder</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\TextFinder\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\tinyFAT</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\tinyFAT\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\WiFi</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\WiFi\utility</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Wire</Value>
+            <Value>C:\Users\4ndreas\arduino-1.0.4\libraries\Wire\utility</Value>
+            <Value>c:\users\4ndreas\arduino-1.0.4\hardware\tools\avr\avr\include\</Value>
+            <Value>c:\users\4ndreas\arduino-1.0.4\hardware\tools\avr\avr\include\avr\</Value>
+            <Value>c:\users\4ndreas\arduino-1.0.4\hardware\tools\avr\avr\</Value>
+            <Value>c:\users\4ndreas\arduino-1.0.4\hardware\tools\avr\lib\gcc\avr\4.3.2\include\</Value>
+            <Value>
+            </Value>
+          </ListValues>
+        </avrgcccpp.compiler.directories.IncludePaths>
+        <avrgcccpp.compiler.optimization.level>Optimize (-O1)</avrgcccpp.compiler.optimization.level>
+        <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+        <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+        <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+        <avrgcccpp.compiler.miscellaneous.OtherFlags>-include=arduino.h</avrgcccpp.compiler.miscellaneous.OtherFlags>
+        <avrgcccpp.linker.memorysettings.Comment>&lt;segmentname&gt;=&lt;address&gt;, for example  .boot=0xff</avrgcccpp.linker.memorysettings.Comment>
+        <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+      </AvrGccCpp>
+    </ToolchainSettings>
+    <VisualMicroSettings>
+      <VisualMicroSettings>
+        <arduino.board.name>mega2560</arduino.board.name>
+        <arduino.board.desc>Arduino Mega 2560 or Mega ADK</arduino.board.desc>
+        <arduino.board.property_bag>name=Arduino Mega 2560 or Mega ADK
+upload.protocol=wiring
+upload.maximum_size=258048
+upload.speed=115200
+bootloader.low_fuses=0xFF
+bootloader.high_fuses=0xD8
+bootloader.extended_fuses=0xFD
+bootloader.path=stk500v2
+bootloader.file=stk500boot_v2_mega2560.hex
+bootloader.unlock_bits=0x3F
+bootloader.lock_bits=0x0F
+build.mcu=atmega2560
+build.f_cpu=16000000L
+build.core=arduino
+build.variant=mega
+runtime.ide.path=C:\Users\4ndreas\arduino-1.0.4
+build.system.path=C:\Users\4ndreas\arduino-1.0.4\hardware\arduino\system
+software=ARDUINO
+runtime.ide.version=104
+vm.core.include=arduino.h
+vm.boardsource.path=C:\Users\4ndreas\arduino-1.0.4\hardware\arduino
+vm.boardsource.name=boards.txt
+vm.platformname.name=
+compiler.path=C:\Users\4ndreas\arduino-1.0.4\hardware\tools\avr\bin\
+includes= -I"C:\Users\4ndreas\arduino-1.0.4\hardware\arduino\cores\arduino"  -I"C:\Users\4ndreas\arduino-1.0.4\hardware\arduino\variants\mega"  -I"C:\Users\4ndreas\arduino-1.0.4\libraries\SPI" 
+build.path=C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560
+build.project_name=Repetier
+build.variant.path=C:\Users\4ndreas\arduino-1.0.4\hardware\arduino\variants\mega
+archive_file=core.a
+object_file="C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560\SPI\SPI.cpp.o"
+source_file="C:\Users\4ndreas\arduino-1.0.4\libraries\SPI\SPI.cpp"
+object_files="C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560\Commands.cpp.o" "C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560\Eeprom.cpp.o" "C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560\Extruder.cpp.o" "C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560\gcode.cpp.o" "C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560\motion.cpp.o" "C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560\Repetier.cpp.o" "C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560\SDCard.cpp.o" "C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560\SdFat.cpp.o" "C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560\ui.cpp.o" "C:\Users\4ndreas\AppData\Local\VMicro\Arduino\Builds\Repetier\mega2560\SPI\SPI.cpp.o" 
+</arduino.board.property_bag>
+        <arduino.build.mcu>atmega2560</arduino.build.mcu>
+        <arduino.build.f_cpu>16000000L</arduino.build.f_cpu>
+        <arduino.build.core>arduino</arduino.build.core>
+        <arduino.upload.protocol>wiring</arduino.upload.protocol>
+        <arduino.upload.speed>115200</arduino.upload.speed>
+        <arduino.upload.maximum_size>258048</arduino.upload.maximum_size>
+        <arduino.upload.port>COM4</arduino.upload.port>
+      </VisualMicroSettings>
+    </VisualMicroSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="Repetier.pde">
+      <SubType>compile</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Visual Micro\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Configuration.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Eeprom.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Eeprom.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Extruder.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="fastio.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FatStructs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="gcode.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="gcode.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="motion.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="pins.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Reptier.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="SDCard.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="SdFat.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="SdFat.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ui.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ui.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uiconfig.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uilang.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="uimenu.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Visual Micro\.Repetier.vsarduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>

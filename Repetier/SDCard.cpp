@@ -74,6 +74,7 @@ void SDCard::initsd() {
     }
     fat.setStdOut(&out);
     sdactive = true;
+	OUT_P_LN("SD card ok");
   #endif
 }
   

@@ -364,7 +364,7 @@ void microstep_init()
 #endif
 }
 
-
+byte nozzle_is_lifted = 0;
 
 /**
   \brief Execute the command stored in com.
@@ -523,6 +523,60 @@ void process_command(GCode *com,byte bufferedCommand)
           check_periodical();
         }
         break;
+	  case 10:	// G10 lift nozzle
+		//wait_until_end_of_move();
+		//nozzle_is_lifted = 1;
+		  // --- add lift code here ---
+		      //i2c_start_wait(UI_DISPLAY_I2C_ADDRESS+I2C_WRITE);
+		      //i2c_write(0x12); // GPIOA
+		      //i2c_stop();
+			  //digitalWrite(PIN_AUX3_3,HIGH);
+			  
+		break;
+	  case 11:	// G11 reverse lift of the nozzle
+		//if (nozzle_is_lifted == 1)	// only do things if nozzle is lifted else skip this
+		//{
+		  //wait_until_end_of_move();
+		  //nozzle_is_lifted = 0;
+		  // --- add revert lift code ---
+		  //digitalWrite(PIN_AUX3_3,LOW);
+		//}
+		break;	
+		
+		case 12:	//set nozzel down
+		 wait_until_end_of_move();
+		 
+		  if(GCODE_HAS_P(com)) 
+		  {
+			  int extr = com->P;
+			  if (extr == 0)
+			  {
+				  digitalWrite(PIN_AUX3_5,HIGH);
+			  }
+			  else if (extr == 1)
+			  {
+				  digitalWrite(PIN_AUX3_3,HIGH);
+			  }
+		  }
+		 break;	
+		
+		case 13:	//lift nozzel upG13
+		wait_until_end_of_move();
+		
+		if(GCODE_HAS_P(com))
+		{
+			int extr = com->P;
+			if (extr == 0)
+			{
+				digitalWrite(PIN_AUX3_5,LOW);
+			}
+			else if (extr == 1)
+			{
+				digitalWrite(PIN_AUX3_3,LOW);
+			}
+		}
+		break;
+			
       case 20: // Units to inches
         unit_inches = 1;
         break;
