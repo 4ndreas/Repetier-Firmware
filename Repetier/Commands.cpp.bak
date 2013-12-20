@@ -1190,7 +1190,7 @@ void process_command(GCode *com,byte bufferedCommand)
     }
   } else if(GCODE_HAS_T(com))  { // Process T code
     wait_until_end_of_move();
-
+	
 	int extr = com->T;
 	if (extr == 0)
 	{
